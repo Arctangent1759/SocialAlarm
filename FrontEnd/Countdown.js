@@ -1,4 +1,5 @@
-function Countdown(date){
+var inguana = new Date(); //todo.
+function countdown(date){
 	//to do! Assuming that date is of type Date object as of now.
 	var today = new Date();
 	timeNow = today.getTime();
@@ -16,4 +17,9 @@ function Countdown(date){
 	minutes = timeDiff%3600/60;
 	seconds = (timeDiff%3600)%60;
 	return [hours,minutes,seconds];
+}
+
+function updateClock(){
+	countdown(inguana);
+	setTimeout(0.5);
 }
