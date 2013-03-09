@@ -15,4 +15,5 @@ function Countdown(date){
 	//Number of minutes left.
 	minutes = timeDiff%3600/60;
 	seconds = (timeDiff%3600)%60;
+	return [hours,minutes,seconds];
 }
