@@ -1,10 +1,11 @@
-var date = new Date("10/10/2014"); //todo.
 function countDown(date){
 	//to do! Assuming that date is of type Date object as of now.
 	var today = new Date();
 	timeNow = today.getTime();
 	timeAlarm = date.getTime();
 	if(timeAlarm<timeNow){
+		console.log("beep")
+		window.clearInterval(i);
 		//beep();
 		return;
 	}
@@ -23,17 +24,39 @@ function updateClock(){
 	var a = countDown(date);
 	if(a){
 		$(".clock-hours").html(Math.floor(a[0]));  
-		$(".clock-minutes").html(Math.floor(a[1])); 
-		$(".clock-seconds").html(Math.floor(a[2]));
+		if(a[1]<10){
+			$(".clock-minutes").html("0"+Math.floor(a[1])); 
+		}else{
+			$(".clock-minutes").html(Math.floor(a[1])); 
+		}
+		if(a[2]<10){
+			$(".clock-seconds").html("0"+Math.floor(a[2])); 
+		}else{
+			$(".clock-seconds").html(Math.floor(a[2]));
+		}
  	}
  	else{
  		beep();
  	}
-	setTimeout(updateClock,1000);
 }
 
+var snd;
 function beep(){
-	var snd = new Audio("file.wav"); // buffers automatically when created
+	snd = new Audio("file.wav"); // buffers automatically when created
+	snd.addEventListener('ended', function() {
+		this.currentTime = 0;
+		this.play();
+	}, false);
 	snd.play();
+	$(".metadata").hide();
+	$(".checkin_phase").show();
 }
-updateClock()
+
+function stopBeep(){
+	snd.pause();
+}
+function checkIn(){
+}
+
+$(".checkin_phase").hide();
+var i=setInterval(updateClock,1000);
