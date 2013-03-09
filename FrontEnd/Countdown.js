@@ -1,10 +1,10 @@
 function Countdown(date){
 	//to do! Assuming that date is of type Date object as of now.
-	Date today = new Date();
+	var today = new Date();
 	timeNow = today.getTime();
 	timeAlarm = date.getTime();
 	if(timeAlarm>timeNow){
-		beep();
+		//beep();
 		return;
 	}
 	timeDiff = timeAlarm - timeNow;
