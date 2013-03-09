@@ -4,6 +4,8 @@ function countDown(date){
 	timeNow = today.getTime();
 	timeAlarm = date.getTime();
 	if(timeAlarm<timeNow){
+		console.log("beep")
+		window.clearInterval(i);
 		//beep();
 		return;
 	}
@@ -28,11 +30,10 @@ function updateClock(){
  	else{
  		beep();
  	}
-	setTimeout(updateClock,1000);
 }
 
 function beep(){
 	var snd = new Audio("file.wav"); // buffers automatically when created
 	snd.play();
 }
-updateClock()
+var i=setInterval(updateClock,1000);
