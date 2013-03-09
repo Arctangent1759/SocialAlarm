@@ -20,8 +20,16 @@ function countDown(date){
 }
 
 function updateClock(){
-	countDown(inguana);
-	setTimeout(0.5);
+	var a = countDown(inguana);
+	if(a){
+		$("clock.hours").html(a[0]);  
+		$("clock.minutes.").html(a[1]); 
+		$("clock.seconds.").html(a[2]);
+ 	}
+ 	else{
+ 		beep();
+ 	}
+	setTimeout(1.0);
 }
 
 function beep(){
