@@ -36,7 +36,9 @@ function updateClock(){
 		}
  	}
  	else{
- 		beep();
+		if (window.location.pathname!="/alarms/new"){
+			beep();
+		}
  	}
 }
 
