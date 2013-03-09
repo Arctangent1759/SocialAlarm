@@ -1,17 +1,22 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   def authenticate_user
-    @alarm = Alarm.find(params[:id])
     unless session[:user_id]
-      session[:user_id] = rand(1..1000000)
+      flash[:notice] = "You need to sign up your name first before you can create or join an alarm"
+      @user = User.new
+      render "/home/new"
     end
     
-    if not @alarm.sessions.include?(session[:user_id])
-       @alarm.sessions.push(session[:user_id])
-       @alarm.expected_sessions.push(session[:user_id])
-       @alarm.expected = @alarm.expected + 1
-       @alarm.save
-     end
+    begin
+      @alarm = Alarm.find(params[:id])
+      if not @alarm.sessions.include?(session[:user_id])
+        @alarm.sessions.push(session[:user_id])
+        @alarm.expected_sessions.push(session[:user_id])
+        @alarm.expected = @alarm.expected + 1
+        @alarm.save
+      end
+    rescue
+    end
   end
   
   

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<center>
+	<%= form_for @user, :url => { :controller => "users", :action => "create" } do |f| %>
+	  <% if @user.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+	      <ul>
+	      <% @user.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+		<span>
+			<strong>Name: </strong>
+			<%= f.text_field :username%>
+		</span>
+		<%= f.submit "Sign me in!", :class=>"btn btn-large"%>
+	<%end %>
+	
+	<%= debug(@user)%>
+</center>

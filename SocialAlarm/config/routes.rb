@@ -1,6 +1,8 @@
 SocialAlarm::Application.routes.draw do
   resources :alarms 
+  resources :users
   
+  match "/home/new" => "home#new"
   match "/alarms/:id/check_in" => "alarms#check_in"
   
   #get "home#index"
