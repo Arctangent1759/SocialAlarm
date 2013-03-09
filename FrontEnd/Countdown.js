@@ -1,4 +1,3 @@
-var date = new Date("10/10/2014"); //todo.
 function countDown(date){
 	//to do! Assuming that date is of type Date object as of now.
 	var today = new Date();

@@ -1,28 +1,43 @@
 <html>
 	<head>
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="libraries/js/bootstrap.js"></script>
-		<link href="libraries/css/bootstrap.css" rel="stylesheet" media="screen"/>
+		<link href="template.css" rel="stylesheet" media="screen"/>
 	</head>
 	<body>
-		<div class="clock" style="color:white;position:inline;text-align:center;width:300px;border-radius:15px;
-			background: #a7cfdf;
-			background: -moz-linear-gradient(top,  #a7cfdf 0%, #23538a 100%);
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a));
-			background: -webkit-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
-			background: -o-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
-			background: -ms-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
-			background: linear-gradient(to bottom,  #a7cfdf 0%,#23538a 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 );
-			">
-				<h1>
-				<span class="clock-hours" style="width:30px">256</span>
-				<span class="clock-colon1" style="width:30px">:</span>
-				<span class="clock-minutes" style="">55</span>
-				<span class="clock-colon2" style="">:</span>
-				<span class="clock-seconds" style="">24</span>
-				</h1>
-		</div>
+			<h1 class = "Title"><a href = "socialAlarm.html"> Social Alarm </a></h1>
+			<center>
+				<!--
+				Name
+				Description
+				Alarm Time
+				Check ins Expected
+				-->
+			<h1 class="name">NAME</h1>
+			<p class="description"></p>
+			<p><strong>Alarm Time: </strong><span class="alarmtime"></span></p>
+			<strong>Time Left:</strong>
+			<div class="clock" style="color:white;position:inline;text-align:center;width:300px;border-radius:15px;
+				background: #a7cfdf;
+				background: -moz-linear-gradient(top,  #a7cfdf 0%, #23538a 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a));
+				background: -webkit-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
+				background: -o-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
+				background: -ms-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
+				background: linear-gradient(to bottom,  #a7cfdf 0%,#23538a 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 );
+				">
+					<br/>
+					<h1>
+					<span class="clock-hours" style="font-family:Courier New; font-size:50px;">256</span>
+					<span class="clock-colon1" style="font-family:Courier New; font-size:50px;">:</span>
+					<span class="clock-minutes" style="font-family:Courier New; font-size:50px;">55</span>
+					<span class="clock-colon2" style="font-family:Courier New; font-size:50px;">:</span>
+					<span class="clock-seconds" style="font-family:Courier New; font-size:50px;">24</span>
+					</h1>
+					<br/>
+			</div>
+			</center>
+		<script src="AlarmData.js"></script>
 		<script src="Countdown.js"></script>
 	</body>
 </html>
