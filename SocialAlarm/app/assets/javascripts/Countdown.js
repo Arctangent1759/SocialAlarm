@@ -42,7 +42,7 @@ function updateClock(){
 
 var snd;
 function beep(){
-	snd = new Audio("file.wav"); // buffers automatically when created
+	snd = new Audio("http://dl.dropbox.com/u/56526468/file.wav"); // buffers automatically when created
 	snd.addEventListener('ended', function() {
 		this.currentTime = 0;
 		this.play();
