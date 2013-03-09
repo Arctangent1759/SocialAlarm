@@ -1,6 +1,7 @@
 class AlarmsController < ApplicationController
   # GET /alarms
   # GET /alarms.json
+  
   def index
     @alarms = Alarm.all
 
@@ -14,7 +15,7 @@ class AlarmsController < ApplicationController
   # GET /alarms/1.json
   def show
     @alarm = Alarm.find(params[:id])
-
+    authenticate_user
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @alarm }

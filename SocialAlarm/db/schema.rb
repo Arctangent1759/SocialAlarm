@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(:version => 20130309080053) do
 
   create_table "alarms", :force => true do |t|
-    t.time "alarm_time"
+    t.string   "name"
+    t.datetime "alarm_time"
     t.integer  "expected"
     t.text     "sessions"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "expected_sessions"
+    t.text     "description"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
 end

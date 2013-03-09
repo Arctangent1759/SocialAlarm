@@ -10,23 +10,24 @@
       </ul>
     </div>
   <% end %>
+	<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
 
   <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+	<div class="field">
     <%= f.label :alarm_time %><br />
     <%= f.datetime_select :alarm_time %>
   </div>
-  <div class="field">
-    <%= f.label :expected %><br />
-    <%= f.number_field :expected %>
-  </div>
-  <div class="field">
-    <%= f.label :sessions %><br />
-    <%= f.text_area :sessions %>
-  </div>
-  <div class="field">
-    <%= f.label :expected %><br />
-    <%= f.text_area :expected %>
-  </div>
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
