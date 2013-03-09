@@ -1,7 +1,7 @@
 class AlarmsController < ApplicationController
+  before_filter :authenticate_user, :only => [:show,:new]
   # GET /alarms
   # GET /alarms.json
-  
   def index
     @alarms = Alarm.all
 
@@ -15,7 +15,9 @@ class AlarmsController < ApplicationController
   # GET /alarms/1.json
   def show
     @alarm = Alarm.find(params[:id])
-    authenticate_user
+    @alarm.sessions.compact!
+    @alarm.expected_sessions.compact!
+    @alarm.save
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @alarm }
@@ -25,6 +27,7 @@ class AlarmsController < ApplicationController
   # GET /alarms/new
   # GET /alarms/new.json
   def new
+    authenticate_user
     @alarm = Alarm.new
 
     respond_to do |format|
@@ -81,4 +84,20 @@ class AlarmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /alarms/1/check_in
+  def check_in
+    @alarm = Alarm.find(params[:id])
+    if @alarm.expected_sessions.include?(session[:user_id])
+      @alarm.expected_sessions.delete(session[:user_id])
+      @alarm.expected -= 1
+      @alarm.save
+      flash[:notice] = "You checked in!"
+    else
+    end
+    redirect_to :back
+    
+  end
+
+    
 end

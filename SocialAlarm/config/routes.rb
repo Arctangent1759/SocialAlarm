@@ -1,8 +1,13 @@
 SocialAlarm::Application.routes.draw do
-  get "home/index"
+  resources :alarms 
+  resources :users
+  
+  match "/home/new" => "home#new"
+  match "/alarms/:id/check_in" => "alarms#check_in"
+  
+  #get "home#index"
 
-  resources :alarms
-
+  #get "alarm#check_in"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

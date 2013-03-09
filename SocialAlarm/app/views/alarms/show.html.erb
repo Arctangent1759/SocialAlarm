@@ -2,7 +2,6 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= debug(@alarm) %>
 <p>
   <b>Alarm time:</b>
   <%= @alarm.alarm_time %>
@@ -15,8 +14,14 @@
 
 <p>
   <b>Sessions:</b>
-  <%= @alarm.sessions %>
+<% group_users = []%>
+  <% for user_id in @alarm.sessions %>
+		<%group_users.push(User.find(user_id).username)%>
+	<% end %>
+	<%= group_users%>
 </p>
+
+<%= link_to "Check In", "#{params[:id]}/check_in"%>
 
 <%= link_to 'Edit', edit_alarm_path(@alarm) %> |
 <%= link_to 'Back', alarms_path %>
