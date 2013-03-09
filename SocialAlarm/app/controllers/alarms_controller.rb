@@ -15,6 +15,7 @@ class AlarmsController < ApplicationController
   # GET /alarms/1.json
   def show
     @alarm = Alarm.find(params[:id])
+    @current_alarm = params[:id]
     authenticate_user
     respond_to do |format|
       format.html # show.html.erb
@@ -81,4 +82,22 @@ class AlarmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /alarms/1/check_in
+  def check_in
+    @alarm = Alarm.find(params[:id])
+    if @alarm.expected_sessions.include?(session[:user_id])
+      @alarm.expected_sessions.delete(session[:user_id])
+      @alarm.expected -= 1
+      @alarm.save
+      flash[:notice] = "You checked in!"
+      @message = "If statement"
+    else
+      @message = "Else Statement"
+    end
+    redirect_to :back
+    
+  end
+
+    
 end

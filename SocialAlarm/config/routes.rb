@@ -1,8 +1,11 @@
 SocialAlarm::Application.routes.draw do
-  get "home/index"
+  resources :alarms 
+  
+  match "/alarms/:id/check_in" => "alarms#check_in"
+  
+  #get "home#index"
 
-  resources :alarms
-
+  #get "alarm#check_in"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -53,11 +56,8 @@ SocialAlarm::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-<<<<<<< HEAD
-  root :to => 'alarms#index'
-=======
+
   root :to => 'home#index'
->>>>>>> b85bde5be97dee10b73ad2e47d787f38e5cd0556
 
   # See how all your routes lay out with "rake routes"
 
