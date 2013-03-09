@@ -50,12 +50,22 @@ function beep(){
 	snd.play();
 	$(".metadata").hide();
 	$(".checkin_phase").show();
+	setInterval(checkDone,1000);
 }
 
 function stopBeep(){
 	snd.pause();
 }
 function checkIn(){
+	$.get(window.location.pathname.split(".")[0]+"/checkin");
+}
+function checkDone(){
+	var json = $.getJSON(window.location.pathname.split(".")+".json",function(data) { 
+		if (data.expected == 0){
+			stopBeep();
+		}
+		$(".checkins_needed").html(data.expected);
+	});
 }
 
 $(".checkin_phase").hide();
