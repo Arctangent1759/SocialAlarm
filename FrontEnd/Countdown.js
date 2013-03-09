@@ -23,12 +23,12 @@ function updateClock(){
 	if(a){
 		$(".clock-hours").html(Math.floor(a[0]));  
 		if(a[1]<10){
-			$(".clock-minutes").html(Math.floor("0"+a[1])); 
+			$(".clock-minutes").html("0"+Math.floor(a[1])); 
 		}else{
 			$(".clock-minutes").html(Math.floor(a[1])); 
 		}
 		if(a[2]<10){
-			$(".clock-seconds").html(Math.floor("0"+a[2])); 
+			$(".clock-seconds").html("0"+Math.floor(a[2])); 
 		}else{
 			$(".clock-seconds").html(Math.floor(a[2]));
 		}
