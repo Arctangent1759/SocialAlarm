@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alarm_time: 2013-03-09 00:00:53
+  expected: 1
+  sessions: MyText
+  expected: MyText
+
+two:
+  alarm_time: 2013-03-09 00:00:53
+  expected: 1
+  sessions: MyText
+  expected: MyText
