@@ -10,6 +10,32 @@
       </ul>
     </div>
   <% end %>
+<<<<<<< HEAD
+
+<!---->
+	<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+	<div class="field">
+    <%= f.label :alarm_time %><br />
+    <%= f.datetime_select :alarm_time %>
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<!-- -->
+=======
 	<table width: 50%>
 		<tr>
 			<td align="center" class = "text"> Name of Event: </td>
@@ -26,4 +52,5 @@
 	</table>
 		</br>
 		<a href = "#" class="buttonDesign" input type="submit" value="Submit"><%= f.submit %>Your Friends Will Hate You</a>
+>>>>>>> 6f6810dd1ce23d451f260be451b139669a6dc5be
 <% end %>

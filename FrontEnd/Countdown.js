@@ -1,4 +1,4 @@
-var inguana = new Date(); //todo.
+var date = new Date("10/10/2014"); //todo.
 function countDown(date){
 	//to do! Assuming that date is of type Date object as of now.
 	var today = new Date();
@@ -20,19 +20,20 @@ function countDown(date){
 }
 
 function updateClock(){
-	var a = countDown(inguana);
+	var a = countDown(date);
 	if(a){
-		$("clock.hours").html(a[0]);  
-		$("clock.minutes.").html(a[1]); 
-		$("clock.seconds.").html(a[2]);
+		$(".clock-hours").html(Math.floor(a[0]));  
+		$(".clock-minutes").html(Math.floor(a[1])); 
+		$(".clock-seconds").html(Math.floor(a[2]));
  	}
  	else{
  		beep();
  	}
-	setTimeout(1.0);
+	setTimeout(updateClock,1000);
 }
 
 function beep(){
 	var snd = new Audio("file.wav"); // buffers automatically when created
 	snd.play();
 }
+updateClock()
