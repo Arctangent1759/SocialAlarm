@@ -1,10 +1,10 @@
 var inguana = new Date(); //todo.
-function countdown(date){
+function countDown(date){
 	//to do! Assuming that date is of type Date object as of now.
 	var today = new Date();
 	timeNow = today.getTime();
 	timeAlarm = date.getTime();
-	if(timeAlarm>timeNow){
+	if(timeAlarm<timeNow){
 		//beep();
 		return;
 	}
@@ -20,6 +20,11 @@ function countdown(date){
 }
 
 function updateClock(){
-	countdown(inguana);
+	countDown(inguana);
 	setTimeout(0.5);
+}
+
+function beep(){
+	var snd = new Audio("file.wav"); // buffers automatically when created
+	snd.play();
 }
