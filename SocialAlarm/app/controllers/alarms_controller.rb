@@ -48,7 +48,7 @@ class AlarmsController < ApplicationController
 
     respond_to do |format|
       if @alarm.save
-        format.html { redirect_to @alarm, notice: 'Alarm was successfully created.' }
+        format.html { redirect_to @alarm, notice: "Alarm was successfully created! Share this link: #{request.url}" }
         format.json { render json: @alarm, status: :created, location: @alarm }
       else
         format.html { render action: "new" }

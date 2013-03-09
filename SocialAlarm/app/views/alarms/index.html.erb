@@ -5,7 +5,7 @@
     <th>Alarm time</th>
     <th>Expected</th>
     <th>Sessions</th>
-    <th>Expected</th>
+    <th>Number Expected</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,8 +18,7 @@
     <td><%= alarm.sessions %></td>
     <td><%= alarm.expected %></td>
     <td><%= link_to 'Show', alarm %></td>
-    <td><%= link_to 'Edit', edit_alarm_path(alarm) %></td>
-    <td><%= link_to 'Destroy', alarm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   
   </tr>
 <% end %>
 </table>

@@ -3,7 +3,8 @@
 
 body {
 	height: 650px;
-	background-color:#333;
+	background-image: url("../wild_oliva.png");
+	
 }
 
 select{
@@ -124,5 +125,10 @@ div.tab {
 	display:block;
 }
 
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #666;
+  -webkit-box-shadow: 3px 3px 5px 6px #666;
+  box-shadow:         3px 3px 5px 6px #666;
+}
 
 

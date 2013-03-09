@@ -1,4 +1,5 @@
-<h1 class = "Title"><a href = "socialAlarm.html"> Social Alarm </a></h1>
+<font size='3'><%= link_to "< Back", alarms_path%></font>
+<h1 class = "Title"><a href = "#"> Social Alarm </a></h1>
 <center class="metadata">
 <!--
 Name
@@ -10,16 +11,7 @@ Check ins Expected
 <p class="description"></p>
 <p><strong>Alarm Time: </strong><span class="alarmtime"></span></p>
 <strong>Time Left:</strong>
-<div class="clock" style="color:white;position:inline;text-align:center;width:300px;border-radius:15px;
-background: #a7cfdf;
-background: -moz-linear-gradient(top,  #a7cfdf 0%, #23538a 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a));
-background: -webkit-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
-background: -o-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
-background: -ms-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
-background: linear-gradient(to bottom,  #a7cfdf 0%,#23538a 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 );
-">
+<div class="clock">
 <br/>
 <h1>
 <span class="clock-hours" style="font-family:Courier New; font-size:50px;">--</span>
@@ -30,7 +22,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', end
 </h1>
 <br/>
 </div>
-<p><strong>'Check In's Expected: </strong><span class="checkins"></span></p>
+<p><strong>Number of people who haven't checked in: </strong><span class="checkins"></span></p>
 </center>
 <center class="checkin_phase">
 	<input onclick="checkIn()" type="button" value="Check In"/>
@@ -50,3 +42,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', end
 </script>
 <h5> Invite them to the alarm clock: </h6>
 <%= request.url%>
+<br> <br>
