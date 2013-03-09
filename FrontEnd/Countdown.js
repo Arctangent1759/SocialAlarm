@@ -40,8 +40,23 @@ function updateClock(){
  	}
 }
 
+var snd;
 function beep(){
-	var snd = new Audio("file.wav"); // buffers automatically when created
+	snd = new Audio("file.wav"); // buffers automatically when created
+	snd.addEventListener('ended', function() {
+		this.currentTime = 0;
+		this.play();
+	}, false);
 	snd.play();
+	$(".metadata").hide();
+	$(".checkin_phase").show();
 }
+
+function stopBeep(){
+	snd.pause();
+}
+function checkIn(){
+}
+
+$(".checkin_phase").hide();
 var i=setInterval(updateClock,1000);
