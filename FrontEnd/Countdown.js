@@ -24,8 +24,16 @@ function updateClock(){
 	var a = countDown(date);
 	if(a){
 		$(".clock-hours").html(Math.floor(a[0]));  
-		$(".clock-minutes").html(Math.floor(a[1])); 
-		$(".clock-seconds").html(Math.floor(a[2]));
+		if(a[1]<10){
+			$(".clock-minutes").html("0"+Math.floor(a[1])); 
+		}else{
+			$(".clock-minutes").html(Math.floor(a[1])); 
+		}
+		if(a[2]<10){
+			$(".clock-seconds").html("0"+Math.floor(a[2])); 
+		}else{
+			$(".clock-seconds").html(Math.floor(a[2]));
+		}
  	}
  	else{
  		beep();
